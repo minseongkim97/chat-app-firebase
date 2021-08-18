@@ -6,6 +6,14 @@
 //
 
 import UIKit
+import SwiftUI
+import SnapKit
+
+struct RegisterVCPreView:PreviewProvider {
+    static var previews: some View {
+        RegisterViewController().toPreview()
+    }
+}
 
 class RegisterViewController: UIViewController {
     
@@ -50,10 +58,45 @@ class RegisterViewController: UIViewController {
         return field
     }()
     
-    private let loginButton: UIButton = {
+    
+    private let firstNameField: UITextField = {
+        let field = UITextField()
+        field.autocapitalizationType = .none
+        field.autocorrectionType = .no
+        field.returnKeyType = .continue
+        field.layer.cornerRadius = 12
+        field.layer.borderWidth = 1
+        field.layer.borderColor = UIColor.lightGray.cgColor
+        field.placeholder = "First Name..."
+        
+        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
+        field.leftViewMode = .always
+        field.backgroundColor = .white
+        return field
+    }()
+    
+    
+    private let lastNameField: UITextField = {
+        let field = UITextField()
+        field.autocapitalizationType = .none
+        field.autocorrectionType = .no
+        field.returnKeyType = .continue
+        field.layer.cornerRadius = 12
+        field.layer.borderWidth = 1
+        field.layer.borderColor = UIColor.lightGray.cgColor
+        field.placeholder = "Last Name..."
+        
+        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
+        field.leftViewMode = .always
+        field.backgroundColor = .white
+        return field
+    }()
+    
+    
+    private let registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Log In", for: .normal)
-        button.backgroundColor = .link
+        button.setTitle("Register", for: .normal)
+        button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
@@ -75,8 +118,8 @@ class RegisterViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
         
-        loginButton.addTarget(self,
-                              action: #selector(loginButtonTapped),
+        registerButton.addTarget(self,
+                              action: #selector(registerButtonTapped),
                               for: .touchUpInside)
         
         emailField.delegate = self
@@ -85,9 +128,11 @@ class RegisterViewController: UIViewController {
         // Add subviews
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
+        scrollView.addSubview(firstNameField)
+        scrollView.addSubview(lastNameField)
         scrollView.addSubview(emailField)
         scrollView.addSubview(passwordField)
-        scrollView.addSubview(loginButton)
+        scrollView.addSubview(registerButton)
     }
     
     override func viewDidLayoutSubviews() {
@@ -100,9 +145,22 @@ class RegisterViewController: UIViewController {
             make.centerX.equalTo(scrollView)
             make.width.height.equalTo(size)
         }
+        firstNameField.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.centerX.equalTo(scrollView)
+            make.width.equalTo(scrollView.width-60)
+            make.height.equalTo(52)
+        }
+        
+        lastNameField.snp.makeConstraints { make in
+            make.top.equalTo(firstNameField.snp.bottom).offset(10)
+            make.centerX.equalTo(scrollView)
+            make.width.equalTo(scrollView.width-60)
+            make.height.equalTo(52)
+        }
         
         emailField.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.top.equalTo(lastNameField.snp.bottom).offset(10)
             make.centerX.equalTo(scrollView)
             make.width.equalTo(scrollView.width-60)
             make.height.equalTo(52)
@@ -115,7 +173,7 @@ class RegisterViewController: UIViewController {
             make.height.equalTo(52)
         }
         
-        loginButton.snp.makeConstraints { make in
+        registerButton.snp.makeConstraints { make in
             make.top.equalTo(passwordField.snp.bottom).offset(10)
             make.centerX.equalTo(scrollView)
             make.width.equalTo(scrollView.width-60)
@@ -136,14 +194,18 @@ class RegisterViewController: UIViewController {
         //                                     width: scrollView.width-60,
         //                                     height: 52)
         //
-        //        loginButton.frame = CGRect(x: 30,
+        //        registerButton.frame = CGRect(x: 30,
         //                                     y: passwordField.bottom+10,
         //                                     width: scrollView.width-60,
         //                                     height: 52)
         
         
     }
-    @objc private func loginButtonTapped() {
+    @objc private func registerButtonTapped() {
+        
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
         guard let email = emailField.text, let password = passwordField.text, !email.isEmpty, !password.isEmpty, password.count >= 6 else {
             alertUserLoginError()
             return
@@ -178,7 +240,7 @@ extension RegisterViewController: UITextFieldDelegate {
             passwordField.becomeFirstResponder()
         }
         else if textField == passwordField {
-            loginButtonTapped()
+            registerButtonTapped()
         }
         
         return true
