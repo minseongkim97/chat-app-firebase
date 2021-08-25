@@ -21,6 +21,7 @@
 		2440342726CD8B4100FBC207 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440342626CD8B4100FBC207 /* ProfileViewController.swift */; };
 		2440342A26CD8B9600FBC207 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440342926CD8B9600FBC207 /* UIViewController.swift */; };
 		2440342D26CD90D400FBC207 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440342C26CD90D400FBC207 /* UIView.swift */; };
+		2440342F26D609C700FBC207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2440342E26D609C700FBC207 /* GoogleService-Info.plist */; };
 		519DBBA381C76D293A2D0AC4 /* Pods_chat_app_firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D312946097E4BB4146A9146 /* Pods_chat_app_firebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		2440342626CD8B4100FBC207 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2440342926CD8B9600FBC207 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2440342C26CD90D400FBC207 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2440342E26D609C700FBC207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D312946097E4BB4146A9146 /* Pods_chat_app_firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chat_app_firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D543ED1E3B94849B7687F1 /* Pods-chat-app-firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-app-firebase.debug.xcconfig"; path = "Target Support Files/Pods-chat-app-firebase/Pods-chat-app-firebase.debug.xcconfig"; sourceTree = "<group>"; };
 		DCD1518723F66EACA7123226 /* Pods-chat-app-firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-app-firebase.release.xcconfig"; path = "Target Support Files/Pods-chat-app-firebase/Pods-chat-app-firebase.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				2440341726CD89FA00FBC207 /* Views */,
 				2440341626CD89EB00FBC207 /* Controllers */,
 				2440341026CD88F300FBC207 /* Info.plist */,
+				2440342E26D609C700FBC207 /* GoogleService-Info.plist */,
 			);
 			path = "chat-app-firebase";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2440340F26CD88F300FBC207 /* LaunchScreen.storyboard in Resources */,
+				2440342F26D609C700FBC207 /* GoogleService-Info.plist in Resources */,
 				2440340C26CD88F300FBC207 /* Assets.xcassets in Resources */,
 				2440340A26CD88F200FBC207 /* Main.storyboard in Resources */,
 			);
@@ -380,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -435,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

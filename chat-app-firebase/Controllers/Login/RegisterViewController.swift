@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import SnapKit
+import FirebaseAuth
 
 struct RegisterVCPreView:PreviewProvider {
     static var previews: some View {
@@ -237,7 +238,17 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        // Firebase Login
+        // Firebase Register
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            guard let result = authResult, error == nil else {
+                print("Error creating user")
+                return
+            }
+            
+            let user = result.user
+            print("Created User: \(user)")
+        }
+        
         
     }
     
