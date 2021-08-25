@@ -116,6 +116,8 @@ class LoginViewController: UIViewController {
             make.height.equalTo(52)
         }
         
+     
+        
         passwordField.snp.makeConstraints { make in
             make.top.equalTo(emailField.snp.bottom).offset(10)
             make.centerX.equalTo(scrollView)
