@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Conversations View Controller-->
+        <!--Chats-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversationsViewController" customModule="chat_app_firebase" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,23 +19,38 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qlZ-di-CsY"/>
+                    <navigationItem key="navigationItem" title="Chats" id="qlZ-di-CsY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="106" y="806"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="h78-EY-GSS">
             <objects>
-                <viewController id="Qd6-zW-EFz" sceneMemberID="viewController">
+                <viewController id="Qd6-zW-EFz" customClass="ProfileViewController" customModule="chat_app_firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvf-nX-LLW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-UC-LMj">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ipx-G8-Byr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ipx-G8-Byr" firstAttribute="trailing" secondItem="Rvo-UC-LMj" secondAttribute="trailing" id="5an-VN-6aA"/>
+                            <constraint firstItem="Rvo-UC-LMj" firstAttribute="top" secondItem="ipx-G8-Byr" secondAttribute="top" id="DFb-9O-XcG"/>
+                            <constraint firstItem="Rvo-UC-LMj" firstAttribute="leading" secondItem="ipx-G8-Byr" secondAttribute="leading" id="Fpe-Tj-TyG"/>
+                            <constraint firstItem="ipx-G8-Byr" firstAttribute="bottom" secondItem="Rvo-UC-LMj" secondAttribute="bottom" id="am6-QL-yqc"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fAG-o9-ZIG"/>
+                    <navigationItem key="navigationItem" title="Profile" id="fAG-o9-ZIG"/>
+                    <connections>
+                        <outlet property="tableView" destination="Rvo-UC-LMj" id="goe-EE-A4m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIO-RM-ucJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,14 +74,14 @@
             </objects>
             <point key="canvasLocation" x="614" y="-758"/>
         </scene>
-        <!--Item-->
+        <!--Chats-->
         <scene sceneID="xHu-Dk-E9M">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="POA-3g-0dE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="e5M-Ws-KIp"/>
+                    <tabBarItem key="tabBarItem" title="Chats" id="e5M-Ws-KIp"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ad1-Sc-Icd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Ad1-Sc-Icd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -78,13 +93,13 @@
             </objects>
             <point key="canvasLocation" x="105.79710144927537" y="83.705357142857139"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="rYf-gR-AU1">
             <objects>
                 <navigationController id="xhP-JQ-v8c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="548-fp-GPl"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ND6-EV-SmF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="548-fp-GPl"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ND6-EV-SmF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
