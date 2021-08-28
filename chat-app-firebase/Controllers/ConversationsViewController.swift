@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import SwiftUI
+import FirebaseAuth
 
 struct ConversationVCPreView:PreviewProvider {
     static var previews: some View {
@@ -26,9 +27,12 @@ class ConversationsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let isLoggedIn = UserDefaults.standard.bool(forKey: "logged_in")
+        validateAuth()
+    }
+    
+    private func validateAuth() {
         
-        if !isLoggedIn {
+        if Auth.auth().currentUser == nil {
             let vc = LoginViewController()
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import SwiftUI
-import FirebaseAuth
+import Firebase
 
 struct LoginVCPreView:PreviewProvider {
     static var previews: some View {
@@ -18,6 +18,8 @@ struct LoginVCPreView:PreviewProvider {
 
 class LoginViewController: UIViewController {
 
+    let db = Firestore.firestore()
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.clipsToBounds = true
@@ -176,6 +178,7 @@ class LoginViewController: UIViewController {
 
             let user = result.user
             print("Logged In User: \(user)")
+            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
         }
     }
     

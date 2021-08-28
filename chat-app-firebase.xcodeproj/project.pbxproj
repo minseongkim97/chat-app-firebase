@@ -22,6 +22,8 @@
 		2440342A26CD8B9600FBC207 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440342926CD8B9600FBC207 /* UIViewController.swift */; };
 		2440342D26CD90D400FBC207 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440342C26CD90D400FBC207 /* UIView.swift */; };
 		2440342F26D609C700FBC207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2440342E26D609C700FBC207 /* GoogleService-Info.plist */; };
+		2440343126D6506400FBC207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440343026D6506400FBC207 /* Constants.swift */; };
+		2440343326D7292100FBC207 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440343226D7292100FBC207 /* DatabaseManager.swift */; };
 		519DBBA381C76D293A2D0AC4 /* Pods_chat_app_firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D312946097E4BB4146A9146 /* Pods_chat_app_firebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		2440342926CD8B9600FBC207 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2440342C26CD90D400FBC207 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2440342E26D609C700FBC207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2440343026D6506400FBC207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2440343226D7292100FBC207 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		4D312946097E4BB4146A9146 /* Pods_chat_app_firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chat_app_firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D543ED1E3B94849B7687F1 /* Pods-chat-app-firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-app-firebase.debug.xcconfig"; path = "Target Support Files/Pods-chat-app-firebase/Pods-chat-app-firebase.debug.xcconfig"; sourceTree = "<group>"; };
 		DCD1518723F66EACA7123226 /* Pods-chat-app-firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-app-firebase.release.xcconfig"; path = "Target Support Files/Pods-chat-app-firebase/Pods-chat-app-firebase.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,7 +94,6 @@
 		2440340126CD88F200FBC207 /* chat-app-firebase */ = {
 			isa = PBXGroup;
 			children = (
-				2440342826CD8B8800FBC207 /* Extension */,
 				2440341A26CD8A1C00FBC207 /* Resources */,
 				2440341926CD8A1200FBC207 /* ViewModels */,
 				2440341826CD8A0800FBC207 /* Models */,
@@ -141,8 +144,11 @@
 		2440341A26CD8A1C00FBC207 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2440342826CD8B8800FBC207 /* Extension */,
 				2440340226CD88F200FBC207 /* AppDelegate.swift */,
 				2440340426CD88F200FBC207 /* SceneDelegate.swift */,
+				2440343226D7292100FBC207 /* DatabaseManager.swift */,
+				2440343026D6506400FBC207 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2440343326D7292100FBC207 /* DatabaseManager.swift in Sources */,
 				2440341D26CD8AE800FBC207 /* LoginViewController.swift in Sources */,
 				2440341F26CD8AF000FBC207 /* RegisterViewController.swift in Sources */,
 				2440342D26CD90D400FBC207 /* UIView.swift in Sources */,
@@ -308,6 +315,7 @@
 				2440342726CD8B4100FBC207 /* ProfileViewController.swift in Sources */,
 				2440340526CD88F200FBC207 /* SceneDelegate.swift in Sources */,
 				2440342126CD8B0B00FBC207 /* PhotoViewerViewController.swift in Sources */,
+				2440343126D6506400FBC207 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
